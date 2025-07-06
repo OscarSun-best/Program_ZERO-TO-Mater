@@ -1,0 +1,33 @@
+import random 
+
+def main():
+    list_num = []
+    loop_form = 0
+    while True:
+        user_enter = input("What do you want to max number of the randon number be?")
+        users_input = input("How many number do you want to chose?")
+        if users_input.strip() == "":
+            print("ples enter a number") 
+        elif users_input == "exit" or "EXIT":
+            exit
+        try :
+            users_int = int(users_input)
+            users_int_enter = int(user_enter)
+        except ValueError :
+            print("enter again!")
+        loop_form += 1
+        for i in range(users_int):
+            ramdom_int = random.randint(1,users_int_enter)
+            list_num.append(ramdom_int)
+        for all_num in list_num:
+            print(all_num,end=" ")
+        sum_ = sum(list_num)
+        print(f"the avergr is {sum_}",end="\n\n")
+        print("the maximum number is", max(list_num))
+        print("the minimum number is", min(list_num))
+        if loop_form == 3 :
+            print("if you want to exit then enter [EXIT]")
+        list_num.clear
+        
+
+main()
